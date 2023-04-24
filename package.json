@@ -13,6 +13,10 @@
     "eslint-config-next": "13.2.3",
     "next": "13.2.3",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-animated-heart": "^0.0.7",
+    "react-dom": "18.2.0",
+    "react-heart": "^1.0.6",
+    "react-icons": "^4.8.0",
+    "react-loader-spinner": "^5.3.4"
   }
 }

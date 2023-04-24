@@ -1,0 +1,46 @@
+.mainUserCard {
+  width: 335px;
+  height: 419px;
+  background: #656161;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5vh;
+}
+
+.userImg {
+  margin-top: 5vh;
+}
+
+.userImg :nth-child(1) {
+  border-radius: 200px;
+}
+
+.mainUserCard h1 {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 47px;
+
+  color: #ffffff;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 2vh;
+}
+
+.mainUserCard p {
+  width: 30vh;
+  height: 15vh;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 25px;
+
+  color: #fffbfb;
+  text-align: center;
+  margin-top: 1vh;
+}

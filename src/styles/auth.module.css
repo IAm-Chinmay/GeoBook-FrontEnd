@@ -1,0 +1,202 @@
+.signUpMain {
+  width: 92vh;
+  height: 80vh;
+  background: #727171;
+  border-radius: 20px;
+  align-items: center;
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* margin-bottom: 1vh; */
+}
+
+.logInMain {
+  width: 62vh;
+  height: 63vh;
+  background: #727171;
+  border-radius: 20px;
+  align-items: center;
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 10%;
+}
+
+.signUpMain h1 {
+  font-family: "Imprima";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 40px;
+  text-align: center;
+  margin-top: 3vh;
+  color: aliceblue;
+}
+
+.signUpMain form {
+  margin-left: 10vh;
+}
+
+.signUpMain form h3 {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3vh;
+  line-height: 36px;
+
+  color: #ffffff;
+
+  margin-top: 2vh;
+}
+
+.signUpMain form input {
+  all: unset;
+  width: 41vh;
+  height: 6vh;
+  background: #4c4848;
+  border-radius: 10px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3vh;
+  line-height: 36px;
+  color: #ffffff;
+  padding-left: 2vh;
+}
+
+.signUpMain form .signBtn button {
+  width: 26vh;
+  height: 6vh;
+  background: #727171;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  margin-top: 2vh;
+  margin-left: 8.5vh;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3vh;
+  line-height: 36px;
+
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.signUpMain form .signBtn button:hover {
+  background-color: #8d6b99;
+}
+
+.logInMain h1 {
+  font-family: "Imprima";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 40px;
+  text-align: center;
+  margin-top: 3vh;
+  color: aliceblue;
+}
+
+.logInMain form {
+  margin-left: 10vh;
+}
+
+.logInMain form h3 {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3vh;
+  line-height: 36px;
+
+  color: #ffffff;
+
+  margin-top: 5vh;
+}
+
+.logInMain form input {
+  all: unset;
+  width: 41vh;
+  height: 6vh;
+  background: #4c4848;
+  border-radius: 10px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3vh;
+  line-height: 36px;
+  color: #ffffff;
+  padding-left: 2vh;
+}
+
+.logInMain form .signBtn button {
+  width: 26vh;
+  height: 6vh;
+  background: #727171;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  margin-top: 7vh;
+  margin-left: 8.5vh;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3vh;
+  line-height: 36px;
+
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.logInMain form .signBtn button:hover {
+  background-color: #8d6b99;
+}
+
+.imgPicker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30vh;
+  cursor: pointer;
+  width: fit-content;
+  position: absolute;
+  top: 20vh;
+  left: 20vh;
+}
+
+.imgPicker p {
+  content: "Pick an image";
+  text-align: center;
+  margin-top: 13vh;
+  color: #ffffff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2vh;
+}
+
+.imgPreview {
+  height: 13rem;
+  width: 30vh;
+  background: #4c4848;
+  border-radius: 10px;
+  margin-top: 2vh;
+  margin-left: 7vh;
+}
+
+.imgPreview img {
+  border-radius: 10px;
+  height: 15rem;
+  width: 32vh;
+}
+
+.inputPicker {
+  position: absolute;
+  left: 8vh;
+  top: 3vh;
+  width: 27vh;
+  height: 7rem;
+  opacity: 0;
+  background: white;
+}

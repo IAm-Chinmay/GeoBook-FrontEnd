@@ -1,0 +1,102 @@
+.navMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  position: relative;
+  font-family: "Imprima", sans-serif;
+  color: #ffffff;
+}
+
+.navLogo :nth-child(2) {
+  margin-bottom: 2vh;
+}
+
+.navButtons {
+  margin-right: 10%;
+  display: flex;
+  width: 21%;
+  justify-content: space-between;
+}
+
+.navButtons .btn1 {
+  width: 136px;
+  height: 47px;
+  background: #8d6b99;
+  border: 1px solid #ffffff;
+  border-radius: 9px;
+  color: #ffffff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 35px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 2vh;
+}
+
+.navButtons .btn1:hover {
+  background: #a66abc;
+}
+
+.navButtons .btn3:hover {
+  background-color: #8d6b99;
+}
+
+.navButtons .btn2 {
+  /* width: 136px;
+  height: 47px; */
+  border: 1px solid #ffffff;
+  border-radius: 200px;
+
+  text-align: center;
+  cursor: pointer;
+}
+
+.navButtons .btn3 {
+  width: 136px;
+  height: 47px;
+  background: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 9px;
+  color: #ffffff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 35px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 2.2vh;
+  margin-left: 5vh;
+}
+
+.lOutBtn {
+  position: fixed;
+  top: 85vh;
+  right: 15vh;
+}
+
+.lOutBtn button {
+  background-color: transparent;
+  border: unset;
+  width: 5vh;
+  height: 5vh;
+  cursor: pointer;
+}
+
+.lOutBtn button ::-ms-tooltip {
+  content: "logout";
+}
+
+.lOutBtn button:nth-child(1) {
+  font-size: 4vh;
+  color: white;
+}
