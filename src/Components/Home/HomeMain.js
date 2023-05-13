@@ -28,6 +28,17 @@ function HomeMain() {
     fetchUser();
   }, [sendRequest]);
 
+  // const success = (position) => {
+  //   console.log(position.coords.latitude);
+  //   console.log(position.coords.longitude);
+  // };
+
+  // const err = (err) => {
+  //   console.log(err);
+  // };
+
+  // navigator.geolocation.getCurrentPosition(success, err);
+
   return (
     <>
       {isLoading && (

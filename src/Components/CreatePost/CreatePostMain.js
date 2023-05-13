@@ -15,6 +15,7 @@ function CreatePostMain() {
   const [lat, setLat] = useState();
   const [long, setLong] = useState();
   const [Image, setImage] = useState();
+  const [disable, setDisable] = useState(false);
 
   const auth = useContext(AuthContext);
 
@@ -49,6 +50,14 @@ function CreatePostMain() {
       router.push("/");
     } catch (err) {}
   };
+
+  const showPosition = (position) => {
+    setLat(position.coords.latitude);
+    setLong(position.coords.longitude);
+    lat && long && setDisable(true);
+    // lat && alert(lat);
+    // long && alert(long);
+  };
   return (
     <>
       <div className={styles.createPostMain}>
@@ -70,9 +79,21 @@ function CreatePostMain() {
                 onChange={(event) => {
                   setAdd(event.target.value);
                 }}
+                disabled={disable}
                 type={"text"}
-                required
               />
+              {
+                <button
+                  onClick={() => {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                  }}
+                  className={styles.geoBtn}
+                >
+                  {disable
+                    ? "Used Current Location"
+                    : "Select Current Location"}
+                </button>
+              }
               <h3>Description</h3>
               <textarea
                 onChange={(event) => {

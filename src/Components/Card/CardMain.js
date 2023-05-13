@@ -22,17 +22,24 @@ function CardMain(props) {
   const router = useRouter();
 
   useEffect(() => {
+    const checkLike = async () => {
+      if (props.like && props.like.find((ele) => ele == auth.userId)) {
+        setClick(true);
+      } else {
+        setClick(false);
+      }
+    };
+
     const countLike = async () => {
       try {
         const count = await sendRequest(
-          `http://localhost:5000/api/places//like/count/${props.pid}`,
+          `http://localhost:5000/api/places/like/count/${props.pid}`,
           "GET",
           null,
           {
             Authorization: "Bearer " + auth.token,
           }
         );
-        console.log(count);
         readCount(count.count);
       } catch (err) {
         console.log(err);
@@ -40,6 +47,7 @@ function CardMain(props) {
     };
 
     countLike();
+    checkLike();
   }, []);
 
   const deleteHandler = async () => {
@@ -61,10 +69,6 @@ function CardMain(props) {
   const LikeBtn = async () => {
     if (!isClick) {
       try {
-        // console.log(props.pid);
-        // const formData = new FormData();
-
-        // let pid = props.pid;
         let a = await sendRequest(
           `http://localhost:5000/api/places/like`,
           "POST",
@@ -87,6 +91,22 @@ function CardMain(props) {
 
     if (isClick) {
       setClick(false);
+      try {
+        await sendRequest(
+          `http://localhost:5000/api/places/dislike`,
+          "POST",
+          JSON.stringify({
+            postId: props.pid,
+            userId: auth.userId,
+          }),
+          {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + auth.token,
+          }
+        );
+      } catch (err) {
+        console.log(err);
+      }
     }
   };
 
@@ -114,16 +134,24 @@ function CardMain(props) {
               Delete
             </button>
           )}
-          {auth.userId != props.user && (
-            <div className={styles.likeHeart}>
+          <div className={styles.likeHeart}>
+            {auth.userId && auth.userId != props.user && (
               <Heart
                 style={{ width: "2rem" }}
                 isActive={isClick}
                 onClick={LikeBtn}
               />
-              <span>{likeCount && likeCount ? likeCount : 0} Likes</span>
-            </div>
-          )}
+            )}
+            {auth.userId == props.user && (
+              <span
+                style={{
+                  marginTop: "-10vh",
+                }}
+              >
+                {likeCount && likeCount ? likeCount : 0} Likes
+              </span>
+            )}
+          </div>
         </div>
       </div>
     </>

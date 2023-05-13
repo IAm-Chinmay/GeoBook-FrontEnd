@@ -1,6 +1,6 @@
 .createPostMain {
   width: 117vh;
-  height: 78vh;
+  height: 88vh;
   background: #727171;
   border-radius: 3vh;
   margin-left: 40vh;
@@ -49,6 +49,31 @@
   font-size: 2.4vh;
   margin-left: 10vh;
   margin-bottom: 5vh;
+}
+
+.createFormMain input:disabled {
+  background: #4c484834;
+  cursor: not-allowed;
+}
+
+.createFormMain .geoBtn {
+  all: unset;
+  background-color: transparent;
+  height: 5vh;
+  width: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2vh;
+  border: 1px solid white;
+  color: white;
+  margin: 0vh 0vh 4vh 10vh;
+  cursor: pointer;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3vh;
+  line-height: 36px;
 }
 
 .createFormMain h2 {

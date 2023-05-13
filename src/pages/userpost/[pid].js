@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Head from "next/head";
 import NavBar from "@/Components/NavBar";
 
 import CardMain from "@/Components/Card/CardMain";
 
 import styles from "../../styles/card.module.css";
+
+import { AuthContext } from "@/Components/AuthContext";
 
 import { useRouter } from "next/router";
 import { useHttpClient } from "@/Components/httpHooks";
@@ -13,11 +15,29 @@ function UserPost() {
   const router = useRouter();
 
   const [userPlace, setUserPlaces] = useState();
+  const [likes, setLikes] = useState();
+
+  const auth = useContext(AuthContext);
 
   const { sendRequest } = useHttpClient();
 
   const pid = router.query.pid;
   useEffect(() => {
+    const getLikes = async () => {
+      try {
+        let like = await sendRequest(
+          "http://localhost:5000/api/places/getlike",
+          "GET",
+          null,
+          {
+            Authorization: "Bearer " + auth.token,
+          }
+        );
+        like && setLikes(like.likes);
+      } catch (err) {
+        console.log(err);
+      }
+    };
     const fetchPlace = async () => {
       try {
         const responseData = await sendRequest(
@@ -28,7 +48,8 @@ function UserPost() {
       } catch (err) {}
     };
     fetchPlace();
-  }, [sendRequest, pid]);
+    getLikes();
+  }, [pid]);
 
   return (
     <>
@@ -59,6 +80,7 @@ function UserPost() {
           {userPlace &&
             userPlace.map((place) => (
               <CardMain
+                like={place.like}
                 pid={place.id}
                 user={place.user}
                 title={place.title}
