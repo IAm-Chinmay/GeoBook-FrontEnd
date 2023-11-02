@@ -35,6 +35,7 @@ function Login() {
           "Content-Type": "application/json",
         }
       );
+      console.log(responseData);
       auth.login(responseData.userId, responseData.token);
       setLoader(false);
     } catch (error) {}
@@ -88,6 +89,7 @@ function Login() {
               clearError(true);
               setEmail(event.target.value);
             }}
+            required
           />
           <h3>Password</h3>
           <input
@@ -96,6 +98,7 @@ function Login() {
               clearError(true);
               setPass(event.target.value);
             }}
+            required
           />
           <div className={styles.signBtn}>
             <button type={"submit"}>LogIn</button>

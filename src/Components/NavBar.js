@@ -41,7 +41,7 @@ function NavBar() {
   return (
     <>
       <div className={styles.navMain}>
-        <div className={styles.navLogo}>
+        <div title="Home" className={styles.navLogo}>
           <Image src={logo} alt="Logo" width={90} height={90} />
           <Link href={"/"} style={{ all: "unset", cursor: "pointer" }}>
             <h1>GeoBook</h1>
@@ -59,6 +59,7 @@ function NavBar() {
               {user &&
                 user.map((img) => (
                   <Image
+                    alt="user"
                     className={styles.btn2}
                     src={`http://localhost:5000/${img.img}`}
                     width={65}

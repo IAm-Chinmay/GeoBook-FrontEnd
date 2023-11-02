@@ -16,6 +16,7 @@ function HomeMain() {
     const fetchUser = async () => {
       try {
         const responseData = await sendRequest(
+          // "http://localhost:5000/api/user"
           "http://localhost:5000/api/user"
         );
         loadedUser(

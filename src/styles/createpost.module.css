@@ -56,6 +56,10 @@
   cursor: not-allowed;
 }
 
+.createFormMain .geoBtn:hover {
+  background-color: #8d6b99;
+}
+
 .createFormMain .geoBtn {
   all: unset;
   background-color: transparent;

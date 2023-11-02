@@ -24,6 +24,7 @@ function UserCard(props) {
         <div className={styles.mainUserCard}>
           <div className={styles.userImg}>
             <Image
+              alt="User Image"
               src={`http://localhost:5000/${props.img}`}
               width={160}
               height={160}
